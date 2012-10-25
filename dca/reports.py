@@ -54,9 +54,9 @@ class ProjectOfficerReport(GenericTabularReport, CustomProjectReport):
 
     @property
     def rows(self):
-        officer = self.request.GET.get("officer", None)
-        month = self.request.GET.get("month", None)
-        year = self.request.GET.get("year", None)
+        officer = self.report_request.GET.get("officer", None)
+        month = self.report_request.GET.get("month", None)
+        year = self.report_request.GET.get("year", None)
         if not (officer and month and year):
             return []
 
@@ -602,18 +602,18 @@ class PortfolioComparisonReport(GenericTabularReport, CustomProjectReport):
     def report_context(self):
         context = super(PortfolioComparisonReport, self).report_context
         context.update(
-            curval=float(self.request.GET.get("curval", 1.0)),
-            curname=self.request.GET.get("curname", "MK")
+            curval=float(self.report_request.GET.get("curval", 1.0)),
+            curname=self.report_request.GET.get("curname", "MK")
         )
         return context
 
     @property
     def rows(self):
-        group_id = self.request.GET.get("group", None)
-        month = self.request.GET.get("month", None)
-        year = self.request.GET.get("year", None)
-        curval = float(self.request.GET.get("curval", 1.0))
-        curname = self.request.GET.get("curname", "MK")
+        group_id = self.report_request.GET.get("group", None)
+        month = self.report_request.GET.get("month", None)
+        year = self.report_request.GET.get("year", None)
+        curval = float(self.report_request.GET.get("curval", 1.0))
+        curname = self.report_request.GET.get("curname", "MK")
 
         if not (month and year):
             return []
@@ -724,11 +724,11 @@ class PerformanceReport(GenericTabularReport, CustomProjectReport):
 
     @property
     def rows(self):
-        group_id = self.request.GET.get("group", None)
-        month = self.request.GET.get("month", None)
-        year = self.request.GET.get("year", None)
-        curval = float(self.request.GET.get("curval", 1.0))
-        curname = self.request.GET.get("curname", "MK")
+        group_id = self.report_request.GET.get("group", None)
+        month = self.report_request.GET.get("month", None)
+        year = self.report_request.GET.get("year", None)
+        curval = float(self.report_request.GET.get("curval", 1.0))
+        curname = self.report_request.GET.get("curname", "MK")
         if not (month and year):
             return []
 
@@ -802,11 +802,11 @@ class PerformanceRatiosReport(GenericTabularReport, CustomProjectReport):
 
     @property
     def rows(self):
-        group_id = self.request.GET.get("group", None)
-        month = self.request.GET.get("month", None)
-        year = self.request.GET.get("year", None)
-        curval = float(self.request.GET.get("curval", 1.0))
-        curname = self.request.GET.get("curname", "MK")
+        group_id = self.report_request.GET.get("group", None)
+        month = self.report_request.GET.get("month", None)
+        year = self.report_request.GET.get("year", None)
+        curval = float(self.report_request.GET.get("curval", 1.0))
+        curname = self.report_request.GET.get("curname", "MK")
         if not (group_id and month and year):
             return []
 
