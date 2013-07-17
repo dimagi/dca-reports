@@ -17,7 +17,7 @@ class ProjectOfficerReport(GenericTabularReport, CustomProjectReport):
     """
     name = "Project Officer Portfolio"
     slug = "officer_portfolio"
-    fields = ['corehq.apps.reports.fields.MonthField',
+    fields = ['corehq.apps.reports.filters.select.MonthFilter',
               'corehq.apps.reports.filters.select.YearFilter',
               'dca.reports.OfficerSelectionField']
     exportable = True
@@ -564,7 +564,7 @@ class PortfolioComparisonReport(GenericTabularReport, CustomProjectReport):
     """
     name = "Portfolio Comparison"
     slug = "portfolio_comparison"
-    fields = ['corehq.apps.reports.fields.MonthField',
+    fields = ['corehq.apps.reports.filters.select.MonthFilter',
               'corehq.apps.reports.filters.select.YearFilter',
               'corehq.apps.reports.filters.select.GroupFilter',
               'dca.reports.CurrencySelectionField']
@@ -650,7 +650,7 @@ class PerformanceReport(GenericTabularReport, CustomProjectReport):
     slug = "project_performance"
     exportable = True
     use_datatables = False
-    fields = ['corehq.apps.reports.fields.MonthField',
+    fields = ['corehq.apps.reports.filters.select.MonthFilter',
               'corehq.apps.reports.filters.select.YearFilter',
               'corehq.apps.reports.filters.select.GroupFilter',
               'dca.reports.CurrencySelectionField']
@@ -773,7 +773,7 @@ class PerformanceRatiosReport(GenericTabularReport, CustomProjectReport):
 #    template_name = "dca/performance-ratios.html"
     exportable = True
     use_datatables = False
-    fields = ['corehq.apps.reports.fields.MonthField',
+    fields = ['corehq.apps.reports.filters.select.MonthFilter',
               'corehq.apps.reports.filters.select.YearFilter',
               'corehq.apps.reports.filters.select.GroupFilter',
               'dca.reports.CurrencySelectionField']
